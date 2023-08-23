@@ -1,6 +1,10 @@
+import * as THREE from 'three'
 import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import { Head } from "./head";
+import { Stars } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 export default function DefaultLayout({
 	children,
@@ -11,20 +15,9 @@ export default function DefaultLayout({
 		<div className="relative flex flex-col h-screen">
 			<Head />
 			<Navbar />
-			<main className="container mx-auto max-w-7xl px-6 flex-grow">
+			<main className="container mx-auto max-w-7xl flex-grow">
 				{children}
 			</main>
-			<footer className="w-full flex items-center justify-center py-3">
-				<Link
-					isExternal
-					className="flex items-center gap-1 text-current"
-					href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-					title="nextui.org homepage"
-				>
-					<span className="text-default-600">Powered by</span>
-					<p className="text-primary">NextUI</p>
-				</Link>
-			</footer>
 		</div>
 	);
 }
