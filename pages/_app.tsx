@@ -8,7 +8,8 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<NextUIProvider>
 			<NextThemesProvider>
-				<Component {...pageProps} />
+        {/* @ts-ignore */}
+				  <Component {...pageProps} />
 			</NextThemesProvider>
 		</NextUIProvider>
 	);
